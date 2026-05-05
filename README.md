@@ -159,12 +159,41 @@ Total Issues       : 3
 
 ## 🧪 Test Coverage
 
-Includes:
+Current test suite includes **23 automated test cases**:
 
-* Edge cases (empty file, invalid data, duplicate IDs)
-* Large dataset scenarios
-* Long reporting hierarchy validation
-* Salary boundary validations
+* `EmployeeIntegrationTest` (16 tests)
+  * CSV/data validation: empty file, invalid rows, duplicate IDs, missing manager
+  * Salary analysis: underpaid, overpaid, valid/no-issue datasets
+  * Hierarchy analysis: long hierarchy, exact boundary, > boundary, cycle safety
+  * Additional scenarios: single CEO, zero salary, large dataset
+* `SalaryAnalyzerTest` (2 tests)
+  * Unit-level validation for underpaid detection and valid manager salary
+* `HierarchyAnalyzerTest` (1 test)
+  * Unit-level validation for long reporting chain detection
+* `ReportGeneratorTest` (2 tests)
+  * Report rendering with all issue types
+  * Null/empty input handling and summary totals
+* `ApplicationTest` (2 tests)
+  * Program argument validation (missing CSV path)
+  * End-to-end execution path with valid CSV argument
+
+### Run Tests
+
+```bash
+mvn test
+```
+
+### Optional Coverage Report (JaCoCo)
+
+```bash
+mvn clean test jacoco:report
+```
+
+Generated HTML report:
+
+```
+target/site/jacoco/index.html
+```
 
 ---
 
