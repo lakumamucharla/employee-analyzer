@@ -182,13 +182,17 @@ src/main/resources/employees.csv
 * Cyclic manager relationships are treated as malformed input and traversal is stopped defensively.
 
 
+<<<<<<< Updated upstream
 
 ---
 
+=======
+>>>>>>> Stashed changes
 ## 👤 Author
 
 Lakuma Prakash
 Java Developer (5+ years experience)
+<<<<<<< Updated upstream
 
 ---
 
@@ -197,3 +201,5 @@ Java Developer (5+ years experience)
 ✔ Completed
 ✔ Tested
 ✔ Ready for review/interview
+=======
+>>>>>>> Stashed changes
