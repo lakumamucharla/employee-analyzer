@@ -1,5 +1,29 @@
 # Employee Analyzer
 
+## ▶️ Quick Start (Run with Program Arguments)
+
+Pass the input CSV file path as the first program argument.
+
+### IntelliJ IDEA
+
+1. Open `Application.java`.
+2. Go to **Run -> Edit Configurations...**.
+3. In **Program arguments**, provide:
+
+```
+src/main/resources/employees.csv
+```
+
+4. Run `Application`.
+
+### Maven (CLI)
+
+From the project root:
+
+```
+mvn clean compile exec:java -Dexec.mainClass="com.company.main.Application" -Dexec.args="src/main/resources/employees.csv"
+```
+
 ## 📌 Overview
 
 This project analyzes an organization's employee structure based on a CSV input file.
@@ -84,18 +108,18 @@ Id,firstName,lastName,salary,managerId
 
 ## ▶️ How to Run
 
-1. Clone the repository
+1. Clone the repository:
 
 ```
 git clone https://github.com/<your-username>/employee-analyzer.git
 ```
 
-2. Open in IntelliJ
+2. Open the project in IntelliJ (or any Java IDE with Maven support).
 
-3. Run:
+3. Run `Application.java` with the CSV file path as the first program argument:
 
 ```
-Application.java
+src/main/resources/employees.csv
 ```
 
 ---
@@ -110,28 +134,25 @@ Application.java
 SALARY ANALYSIS
 ------------------------------------------------------------
 
-Managers UNDERPAID:
-- Martin Chekov (ID: 124)
-  Current Salary       : $45,000.00
-  Subordinate Average : $50,000.00
-  Expected Salary     : $60,000.00
-  Underpaid By        : $15,000.00
+Managers earning LESS than expected:
+  - Uma Underpaid earns UNDERPAID by 20.00
 
-Managers OVERPAID:
-None found.
+Managers earning MORE than expected:
+  - Owen Overpaid earns OVERPAID by 50.00
 
 REPORTING LINE ANALYSIS
 ------------------------------------------------------------
 
-No employees exceed max depth (4).
+Employees with reporting line exceeding 4 levels:
+  - Iris Node13 has reporting line longer by 1 levels
 
 SUMMARY
 ------------------------------------------------------------
 Underpaid Managers : 1
-Overpaid Managers  : 0
-Long Reporting     : 0
+Overpaid Managers  : 1
+Long Reporting     : 1
 ------------------------------------------------------------
-Total Issues       : 1
+Total Issues       : 3
 ```
 
 ---
@@ -167,7 +188,8 @@ Includes:
 
 ## 📎 Notes
 
-* Input file should be placed in:
+* Input file is expected as a program argument.
+* Example default file location:
 
 ```
 src/main/resources/employees.csv
@@ -181,18 +203,12 @@ src/main/resources/employees.csv
 * If a manager ID is missing in the dataset, hierarchy traversal stops at the last known manager.
 * Cyclic manager relationships are treated as malformed input and traversal is stopped defensively.
 
-
-<<<<<<< Updated upstream
-
 ---
 
-=======
->>>>>>> Stashed changes
 ## 👤 Author
 
 Lakuma Prakash
 Java Developer (5+ years experience)
-<<<<<<< Updated upstream
 
 ---
 
@@ -201,5 +217,3 @@ Java Developer (5+ years experience)
 ✔ Completed
 ✔ Tested
 ✔ Ready for review/interview
-=======
->>>>>>> Stashed changes
