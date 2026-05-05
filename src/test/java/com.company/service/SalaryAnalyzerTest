@@ -1,0 +1,38 @@
+import java.util.*;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class SalaryAnalyzerTest {
+
+    @Test
+    void shouldDetectUnderpaidManager() {
+
+        Employee manager = new Employee(1,"A","A",100,null);
+        Employee e1 = new Employee(2,"B","B",100,null);
+        Employee e2 = new Employee(3,"C","C",100,null);
+
+        manager.getSubordinates().add(e1);
+        manager.getSubordinates().add(e2);
+
+        Map<Integer, Employee> map = Map.of(1, manager);
+
+        SalaryAnalyzer analyzer = new SalaryAnalyzer();
+
+        assertFalse(analyzer.analyze(map).isEmpty());
+    }
+
+    @Test
+    void shouldReturnEmptyWhenValid() {
+
+        Employee manager = new Employee(1,"A","A",150,null);
+        Employee e1 = new Employee(2,"B","B",100,null);
+
+        manager.getSubordinates().add(e1);
+
+        Map<Integer, Employee> map = Map.of(1, manager);
+
+        SalaryAnalyzer analyzer = new SalaryAnalyzer();
+
+        assertTrue(analyzer.analyze(map).isEmpty());
+    }
+}
