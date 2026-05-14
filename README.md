@@ -246,3 +246,5 @@ Java Developer (5+ years experience)
 ✔ Completed
 ✔ Tested
 ✔ Ready for review/interview
+
+https://teams.microsoft.com/l/meetup-join/19%3ameeting_MDkxNjljMmUtNTk4MS00OGMyLWI4MjYtOWQ2MGM3NGU3Nzhh%40thread.v2/0?context=%7b%22Tid%22%3a%2263ce7d59-2f3e-42cd-a8cc-be764cff5eb6%22%2c%22Oid%22%3a%22ffdd2c14-f007-4ef5-b2c2-d2475e342195%22%7d
